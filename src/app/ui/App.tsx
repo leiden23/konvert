@@ -1,8 +1,10 @@
+import { DashboardPage } from "../../pages/dashboard";
+import style from "./app.module.scss";
+
 export const App = () => {
   return (
-    <>
-    </>
-  )
-}
-
-export default App
+    <div className={style.app}>
+      <DashboardPage />
+    </div>
+  );
+};
