@@ -1,4 +1,100 @@
 .receipt {
     background-color: white;
     padding: 26px;
+    width: 600px;
+}
+
+.receipt__title {
+    text-align: center;
+    padding-bottom: 12px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.separator {
+    border: none;
+    border-bottom: 2px dashed #ddd0b6;
+}
+
+.receipt__item {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.receipt__categories {
+    flex-wrap: wrap;
+}
+.receipt__category {
+    padding: 4px 9px;
+    font-size: 12px;
+}
+
+.receipt__field__name {
+    flex: 1 1 0;
+    min-width: 0;
+    border-style: none;
+    border-bottom: 2px solid #ddd0b6;
+    padding: 10px 2px;
+
+    &::placeholder {
+        font-size: 18px;
+    }
+}
+
+.receipt__field__price {
+    flex: 0 0 20%;
+    min-width: 0;
+    border-style: none;
+    border-bottom: 2px solid #ddd0b6;
+    padding: 7px 2px;
+    text-align: right;
+    
+    &::placeholder {
+        font-size: 18px;
+    }
+}
+
+.receipt__field__currency {
+    color: #a99d89;
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-weight: 700;
+    flex: 0 0 auto;
+    margin-left: auto;
+    align-self: center;
+
+}
+
+.receipt__fieldRow {
+    width: 100%;
+}
+
+.receipt__date {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.receipt__result__name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #a99d89;
+    
+}
+
+.receipt__date_font {
+    font-family: Caveat, cursive;
+    font-size: 20px;
+}
+
+.receipt__result__price {
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+}
+
+.receipt__bottom {
+    display: flex;
+    justify-content: space-between;
+
 }

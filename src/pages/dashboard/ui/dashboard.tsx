@@ -1,61 +1,83 @@
-import { Stack } from '../../../shared/stack'
-import style from './dashboard.module.scss'
+import { Button } from "../../../shared/ui/button";
+import { Spacer } from "../../../shared/ui/spacer";
+import { Stack } from "../../../shared/ui/stack";
+import style from "./dashboard.module.scss";
 
 export const DashboardPage = () => {
-    return (
-        <Stack dir='column' className = {style.receipt}>
-            <div>
-                название чека
-            </div>
-            <div>
-                разделительная строка
-            </div>
-            <Stack dir='row'>
-                <div>
-                    категория 1
-                </div>
-                <div>
-                    категория 2
-                </div>
-                <div>
-                    категория 3
-                </div>
+  return (
+    <Stack dir="column" className={style.receipt}>
+      <div className={style.receipt__title}>НОВЫЙ ЧЕК</div>
+      <hr className={style.separator} />
+      <Stack dir="column" className={style.receipt__item}>
+        <Stack dir="row" gap={8} className={style.receipt__categories}>
+          <Button variant="secondary" className={style.receipt__category}>
+            <Stack gap={6}>
+              <div className={style.receipt__category__icon}>🏠</div>
+              <div className={style.receipt__category__name}>Дом</div>
             </Stack>
-            <Stack dir='row'>
-                товар
-                цена
+          </Button>
+          <Button variant="secondary" className={style.receipt__category}>
+            <Stack gap={6}>
+              <div className={style.receipt__category__icon}>🍏</div>
+              <div className={style.receipt__category__name}>Продукты</div>
             </Stack>
-            <div>
-                разделительная строка
-            </div>
-            <div>
-                разделительная строка
-            </div>
-            <div>
-                кнопка добавить строку
-            </div>
-            <div>
-                разделительная строка
-            </div>
-            <Stack dir='row'>
-                <div>
-                    дата:
-                </div>
-                <div>
-                    дата
-                </div>
-                <Stack dir='column'>
-                    <div>
-                        итого
-                        </div>
-                    <div>
-                        итог цена
-                        </div>
-                </Stack>
+          </Button>
+          <Button variant="secondary" className={style.receipt__category}>
+            <Stack gap={6}>
+              <div className={style.receipt__category__icon}>🎉</div>
+              <div className={style.receipt__category__name}>Развлечения</div>
             </Stack>
-            <div>
-                кнопка сохранить чек
-            </div>
+          </Button>
+          <Button variant="secondary" className={style.receipt__category}>
+            <Stack gap={6}>
+              <div className={style.receipt__category__icon}>🎉</div>
+              <div className={style.receipt__category__name}>Развлечения</div>
+            </Stack>
+          </Button>
+          <Button variant="secondary" className={style.receipt__category}>
+            <Stack gap={6}>
+              <div className={style.receipt__category__icon}>🎉</div>
+              <div className={style.receipt__category__name}>Развлечения</div>
+            </Stack>
+          </Button>
+          <Button variant="secondary" className={style.receipt__category}>
+            <Stack gap={6}>
+              <div className={style.receipt__category__icon}>🎉</div>
+              <div className={style.receipt__category__name}>Развлечения</div>
+            </Stack>
+          </Button>
         </Stack>
-    )
-}
+        <Spacer height={8} />
+        <div className={style.receipt__field}>
+          <Stack dir="row" gap={8} className={style.receipt__fieldRow}>
+            <input
+              className={style.receipt__field__name}
+              placeholder="название товара"
+            />
+            <input className={style.receipt__field__price} placeholder="0" />
+            <div className={style.receipt__field__currency}>₽</div>
+          </Stack>
+        </div>
+      </Stack>
+      <Button variant="tertiary">+ добавить строку</Button>
+      <Spacer height={16} />
+      <hr className={style.separator} />
+      <Spacer height={10} />
+      <Stack dir="row" className={style.receipt__bottom}>
+        <div className={style.receipt__date}>
+          <div className={style.receipt__date_font}>дата:</div>
+          <input type="date" />
+        </div>
+        <Stack dir="column" className={style.receipt__result}>
+          <div className={style.receipt__result__name}>итого</div>
+          <Stack dir="row" gap={4} className={style.receipt__result__price}>
+            <div>{"0"}</div>
+            <div>₽</div>
+          </Stack>
+        </Stack>
+      </Stack>
+      <Spacer height={20} />
+      <Button>сохранить чек</Button>
+    </Stack>
+  );
+};
