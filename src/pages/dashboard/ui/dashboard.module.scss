@@ -1,7 +1,39 @@
+.page {
+    padding: 30px 24px 90px;
+}
+
 .receipt {
-    background-color: white;
+    position: relative;
+    overflow: visible;
     padding: 26px;
     width: 600px;
+    transform: rotate(-0.8deg);
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-color: #fffdf6;
+        clip-path: polygon(0px 0px, 100% 0px, 100% calc(100% - 9px), 97% 100%, 94% calc(100% - 9px), 91% 100%, 88% calc(100% - 9px), 85% 100%, 82% calc(100% - 9px), 79% 100%, 76% calc(100% - 9px), 73% 100%, 70% calc(100% - 9px), 67% 100%, 64% calc(100% - 9px), 61% 100%, 58% calc(100% - 9px), 55% 100%, 52% calc(100% - 9px), 49% 100%, 46% calc(100% - 9px), 43% 100%, 40% calc(100% - 9px), 37% 100%, 34% calc(100% - 9px), 31% 100%, 28% calc(100% - 9px), 25% 100%, 22% calc(100% - 9px), 19% 100%, 16% calc(100% - 9px), 13% 100%, 10% calc(100% - 9px), 7% 100%, 4% calc(100% - 9px), 1% 100%, 0px calc(100% - 9px));
+    }
+
+    >* {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.receipt__decor {
+    position: absolute;
+    left: 30px;
+    top: -14px;
+    transform: rotate(-4deg);
+    width: 130px;
+    height: 30px;
+    background: #b4c89680;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 5px;
+    z-index: 3;
 }
 
 .receipt__title {
@@ -24,6 +56,7 @@
 .receipt__categories {
     flex-wrap: wrap;
 }
+
 .receipt__category {
     padding: 4px 9px;
     font-size: 12px;
@@ -35,6 +68,9 @@
     border-style: none;
     border-bottom: 2px solid #ddd0b6;
     padding: 10px 2px;
+    font-size: 15px;
+    outline: none;
+    background-color: transparent;
 
     &::placeholder {
         font-size: 18px;
@@ -48,7 +84,18 @@
     border-bottom: 2px solid #ddd0b6;
     padding: 7px 2px;
     text-align: right;
-    
+    outline: none;
+    background-color: transparent;
+    font-size: 15px;
+    appearance: textfield;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
     &::placeholder {
         font-size: 18px;
     }
@@ -62,7 +109,6 @@
     flex: 0 0 auto;
     margin-left: auto;
     align-self: center;
-
 }
 
 .receipt__fieldRow {
@@ -79,12 +125,21 @@
     font-size: 14px;
     font-weight: 500;
     color: #a99d89;
-    
 }
 
 .receipt__date_font {
     font-family: Caveat, cursive;
     font-size: 20px;
+}
+
+.receipt__date_input {
+    border-radius: 6px;
+    border-style: none;
+    font-size: 13px;
+    color: #38312a;
+    padding: 4px 8px;
+    background-color: #f7f1e3;
+    outline: none;
 }
 
 .receipt__result__price {
@@ -96,5 +151,8 @@
 .receipt__bottom {
     display: flex;
     justify-content: space-between;
+}
 
+.receipt__button {
+    box-shadow: #b8472cb3 0px 10px 20px -10px;
 }
