@@ -1,4 +1,5 @@
-import { CategoryButton, type Category } from "../../../entities/receipt";
+import { type Category } from "../../../entities/receipt";
+import { ReceiptItem } from "../../../features/receipt-item";
 import { Button } from "../../../shared/ui/button";
 import { Spacer } from "../../../shared/ui/spacer";
 import { Stack } from "../../../shared/ui/stack";
@@ -19,30 +20,9 @@ export const DashboardPage = () => {
         <div className={style.receipt__decor}></div>
         <div className={style.receipt__title}>НОВЫЙ ЧЕК</div>
         <hr className={style.separator} />
-        <Stack dir="column" className={style.receipt__item}>
-          <Stack dir="row" gap={8} className={style.receipt__categories}>
-            
-            {categoriesMock.map((category) => (
-              <CategoryButton name={category.name} icon={category.icon} />
-            ))}
+        
+        <ReceiptItem categories={categoriesMock}/>
 
-          </Stack>
-          <Spacer height={8} />
-          <div className={style.receipt__field}>
-            <Stack dir="row" gap={8} className={style.receipt__fieldRow}>
-              <input
-                className={style.receipt__field__name}
-                placeholder="название товара"
-              />
-              <input
-                type="number"
-                className={style.receipt__field__price}
-                placeholder="0"
-              />
-              <div className={style.receipt__field__currency}></div>
-            </Stack>
-          </div>
-        </Stack>
         <Button variant="tertiary">+ добавить строку</Button>
         <Spacer height={16} />
         <hr className={style.separator} />

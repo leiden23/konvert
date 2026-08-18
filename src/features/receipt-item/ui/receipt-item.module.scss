@@ -1,0 +1,61 @@
+.item {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.categories {
+    flex-wrap: wrap;
+}
+
+.fieldRow {
+    width: 100%;
+}
+
+.field__name {
+    flex: 1 1 0;
+    min-width: 0;
+    border-style: none;
+    border-bottom: 2px solid #ddd0b6;
+    padding: 10px 2px;
+    font-size: 15px;
+    outline: none;
+    background-color: transparent;
+
+    &::placeholder {
+        font-size: 18px;
+    }
+}
+
+.field__price {
+    flex: 0 0 20%;
+    min-width: 0;
+    border-style: none;
+    border-bottom: 2px solid #ddd0b6;
+    padding: 7px 2px;
+    text-align: right;
+    outline: none;
+    background-color: transparent;
+    font-size: 15px;
+    appearance: textfield;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &::placeholder {
+        font-size: 18px;
+    }
+}
+
+.field__currency {
+    color: #a99d89;
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-weight: 700;
+    flex: 0 0 auto;
+    margin-left: auto;
+    align-self: center;
+}

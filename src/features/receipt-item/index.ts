@@ -1,0 +1,1 @@
+export { ReceiptItem } from './ui'
