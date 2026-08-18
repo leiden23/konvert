@@ -1,7 +1,16 @@
+import { CategoryButton, type Category } from "../../../entities/receipt";
 import { Button } from "../../../shared/ui/button";
 import { Spacer } from "../../../shared/ui/spacer";
 import { Stack } from "../../../shared/ui/stack";
 import style from "./dashboard.module.scss";
+
+const categoriesMock: Category[] = [
+  { name: "Продукты", icon: "🍏" },
+  { name: "Развлечения", icon: "🎉" },
+  { name: "Одежда", icon: "🎉" },
+  { name: "Подписки", icon: "🎉" },
+  { name: "Декор", icon: "🎉" },
+];
 
 export const DashboardPage = () => {
   return (
@@ -12,42 +21,11 @@ export const DashboardPage = () => {
         <hr className={style.separator} />
         <Stack dir="column" className={style.receipt__item}>
           <Stack dir="row" gap={8} className={style.receipt__categories}>
-            <Button variant="secondary" className={style.receipt__category}>
-              <Stack gap={6}>
-                <div>🏠</div>
-                <div>Дом</div>
-              </Stack>
-            </Button>
-            <Button variant="secondary" className={style.receipt__category}>
-              <Stack gap={6}>
-                <div>🍏</div>
-                <div>Продукты</div>
-              </Stack>
-            </Button>
-            <Button variant="secondary" className={style.receipt__category}>
-              <Stack gap={6}>
-                <div>🎉</div>
-                <div>Развлечения</div>
-              </Stack>
-            </Button>
-            <Button variant="secondary" className={style.receipt__category}>
-              <Stack gap={6}>
-                <div>🎉</div>
-                <div>Развлечения</div>
-              </Stack>
-            </Button>
-            <Button variant="secondary" className={style.receipt__category}>
-              <Stack gap={6}>
-                <div>🎉</div>
-                <div>Развлечения</div>
-              </Stack>
-            </Button>
-            <Button variant="secondary" className={style.receipt__category}>
-              <Stack gap={6}>
-                <div>🎉</div>
-                <div>Развлечения</div>
-              </Stack>
-            </Button>
+            
+            {categoriesMock.map((category) => (
+              <CategoryButton name={category.name} icon={category.icon} />
+            ))}
+
           </Stack>
           <Spacer height={8} />
           <div className={style.receipt__field}>
@@ -56,7 +34,11 @@ export const DashboardPage = () => {
                 className={style.receipt__field__name}
                 placeholder="название товара"
               />
-              <input type="number" className={style.receipt__field__price} placeholder="0" />
+              <input
+                type="number"
+                className={style.receipt__field__price}
+                placeholder="0"
+              />
               <div className={style.receipt__field__currency}></div>
             </Stack>
           </div>
