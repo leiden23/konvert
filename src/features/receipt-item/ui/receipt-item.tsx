@@ -28,7 +28,6 @@ export const ReceiptItem: FC<Props> = ({categories}) => {
             className={style.field__price}
             placeholder="0"
           />
-          <div className={style.field__currency}></div>
         </Stack>
       </div>
     </Stack>
