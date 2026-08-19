@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import { Stack } from "../../../shared/ui/stack";
-import { Button } from "../../../shared/ui/button";
+import { Stack } from "@/shared/ui/stack";
+import { Button } from "@/shared/ui/button";
 import style from './category-button.module.scss'
 
 type Props = {

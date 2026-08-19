@@ -1,8 +1,8 @@
 import type { FC } from "react";
-import { CategoryButton, type Category } from "../../../entities/receipt";
-import { Stack } from "../../../shared/ui/stack";
+import { CategoryButton, type Category } from "@/entities/receipt";
+import { Stack } from "@/shared/ui/stack";
 import style from "./receipt-item.module.scss";
-import { Spacer } from "../../../shared/ui/spacer";
+import { Spacer } from "@/shared/ui/spacer";
 
 type Props = {
     categories: Category[]

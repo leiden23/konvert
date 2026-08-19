@@ -1,8 +1,8 @@
-import { type Category } from "../../../entities/receipt";
-import { ReceiptItem } from "../../../features/receipt-item";
-import { Button } from "../../../shared/ui/button";
-import { Spacer } from "../../../shared/ui/spacer";
-import { Stack } from "../../../shared/ui/stack";
+import { type Category } from "@/entities/receipt";
+import { ReceiptItem } from "@/features/receipt-item";
+import { Button } from "@/shared/ui/button";
+import { Spacer } from "@/shared/ui/spacer";
+import { Stack } from "@/shared/ui/stack";
 import style from "./dashboard.module.scss";
 
 const categoriesMock: Category[] = [
