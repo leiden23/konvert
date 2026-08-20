@@ -32,3 +32,10 @@ export const Tertiary: Story = {
         children: 'кнопка'
     }
 }
+
+export const Green: Story = {
+    args: {
+        variant: 'testGreen',
+        children: 'кнопка тестовая'
+    }
+}

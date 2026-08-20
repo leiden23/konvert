@@ -4,7 +4,7 @@ import type { FC, HTMLAttributes } from 'react'
 import clsx from 'clsx'
 
 type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
-    variant?: 'primary' | 'secondary' | 'tertiary',
+    variant?: 'primary' | 'secondary' | 'tertiary' | 'testGreen',
     children: React.ReactNode
 }
 
