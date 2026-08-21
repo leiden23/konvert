@@ -1,9 +1,10 @@
+import style from "./dashboard.module.scss";
+
 import { type Category } from "@/entities/receipt";
 import { ReceiptItem } from "@/features/receipt-item";
 import { Button } from "@/shared/ui/button";
 import { Spacer } from "@/shared/ui/spacer";
 import { Stack } from "@/shared/ui/stack";
-import style from "./dashboard.module.scss";
 
 const categoriesMock: Category[] = [
   { name: "Продукты", icon: "🍏" },
@@ -20,8 +21,8 @@ export const DashboardPage = () => {
         <div className={style.receipt__decor}></div>
         <div className={style.receipt__title}>НОВЫЙ ЧЕК</div>
         <hr className={style.separator} />
-        
-        <ReceiptItem categories={categoriesMock}/>
+
+        <ReceiptItem categories={categoriesMock} />
 
         <Button variant="tertiary">+ добавить строку</Button>
         <Spacer height={16} />

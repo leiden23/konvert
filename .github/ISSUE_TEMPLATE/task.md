@@ -3,8 +3,7 @@ name: Task
 about: Задача на разработку
 title: "[Task]"
 labels: enhancement
-assignees: ''
-
+assignees: ""
 ---
 
 **Ценность**

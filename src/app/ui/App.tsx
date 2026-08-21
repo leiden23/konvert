@@ -1,5 +1,6 @@
-import { DashboardPage } from "@/pages/dashboard";
 import style from "./app.module.scss";
+
+import { DashboardPage } from "@/pages/dashboard";
 
 export const App = () => {
   return (
