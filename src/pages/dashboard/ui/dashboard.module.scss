@@ -1,129 +1,129 @@
 .page {
-  padding: 30px 24px 90px;
+    padding: 30px 24px 90px;
 }
 
 .receipt {
-  position: relative;
-  overflow: visible;
-  padding: 26px;
-  width: 600px;
-  transform: rotate(-0.8deg);
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background-color: #fffdf6;
-    clip-path: polygon(
-      0px 0px,
-      100% 0px,
-      100% calc(100% - 9px),
-      97% 100%,
-      94% calc(100% - 9px),
-      91% 100%,
-      88% calc(100% - 9px),
-      85% 100%,
-      82% calc(100% - 9px),
-      79% 100%,
-      76% calc(100% - 9px),
-      73% 100%,
-      70% calc(100% - 9px),
-      67% 100%,
-      64% calc(100% - 9px),
-      61% 100%,
-      58% calc(100% - 9px),
-      55% 100%,
-      52% calc(100% - 9px),
-      49% 100%,
-      46% calc(100% - 9px),
-      43% 100%,
-      40% calc(100% - 9px),
-      37% 100%,
-      34% calc(100% - 9px),
-      31% 100%,
-      28% calc(100% - 9px),
-      25% 100%,
-      22% calc(100% - 9px),
-      19% 100%,
-      16% calc(100% - 9px),
-      13% 100%,
-      10% calc(100% - 9px),
-      7% 100%,
-      4% calc(100% - 9px),
-      1% 100%,
-      0px calc(100% - 9px)
-    );
-  }
-
-  > * {
     position: relative;
-    z-index: 1;
-  }
+    overflow: visible;
+    padding: 26px;
+    width: 600px;
+    transform: rotate(-0.8deg);
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-color: #fffdf6;
+        clip-path: polygon(
+            0px 0px,
+            100% 0px,
+            100% calc(100% - 9px),
+            97% 100%,
+            94% calc(100% - 9px),
+            91% 100%,
+            88% calc(100% - 9px),
+            85% 100%,
+            82% calc(100% - 9px),
+            79% 100%,
+            76% calc(100% - 9px),
+            73% 100%,
+            70% calc(100% - 9px),
+            67% 100%,
+            64% calc(100% - 9px),
+            61% 100%,
+            58% calc(100% - 9px),
+            55% 100%,
+            52% calc(100% - 9px),
+            49% 100%,
+            46% calc(100% - 9px),
+            43% 100%,
+            40% calc(100% - 9px),
+            37% 100%,
+            34% calc(100% - 9px),
+            31% 100%,
+            28% calc(100% - 9px),
+            25% 100%,
+            22% calc(100% - 9px),
+            19% 100%,
+            16% calc(100% - 9px),
+            13% 100%,
+            10% calc(100% - 9px),
+            7% 100%,
+            4% calc(100% - 9px),
+            1% 100%,
+            0px calc(100% - 9px)
+        );
+    }
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
 }
 
 .receipt__decor {
-  position: absolute;
-  left: 30px;
-  top: -14px;
-  transform: rotate(-4deg);
-  width: 130px;
-  height: 30px;
-  background: #b4c89680;
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 5px;
-  z-index: 3;
+    position: absolute;
+    left: 30px;
+    top: -14px;
+    transform: rotate(-4deg);
+    width: 130px;
+    height: 30px;
+    background: #b4c89680;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 5px;
+    z-index: 3;
 }
 
 .receipt__title {
-  text-align: center;
-  padding-bottom: 12px;
-  font-size: 24px;
-  font-weight: 400;
+    text-align: center;
+    padding-bottom: 12px;
+    font-size: 24px;
+    font-weight: 400;
 }
 
 .separator {
-  border: none;
-  border-bottom: 2px dashed #ddd0b6;
+    border: none;
+    border-bottom: 2px dashed #ddd0b6;
 }
 
 .receipt__date {
-  display: flex;
-  gap: 14px;
-  align-items: center;
+    display: flex;
+    gap: 14px;
+    align-items: center;
 }
 
 .receipt__result__name {
-  font-size: 14px;
-  font-weight: 500;
-  color: #a99d89;
+    font-size: 14px;
+    font-weight: 500;
+    color: #a99d89;
 }
 
 .receipt__date_font {
-  font-family: Caveat, cursive;
-  font-size: 20px;
+    font-family: Caveat, cursive;
+    font-size: 20px;
 }
 
 .receipt__date_input {
-  border-radius: 6px;
-  border-style: none;
-  font-size: 13px;
-  color: #38312a;
-  padding: 4px 8px;
-  background-color: #f7f1e3;
-  outline: none;
+    border-radius: 6px;
+    border-style: none;
+    font-size: 13px;
+    color: #38312a;
+    padding: 4px 8px;
+    background-color: #f7f1e3;
+    outline: none;
 }
 
 .receipt__result__price {
-  font-size: 24px;
-  font-weight: 600;
-  color: black;
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
 }
 
 .receipt__bottom {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .receipt__button {
-  box-shadow: #b8472cb3 0px 10px 20px -10px;
+    box-shadow: #b8472cb3 0px 10px 20px -10px;
 }

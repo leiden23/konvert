@@ -1,1 +1,1 @@
-export { ReceiptItem } from "./ui";
+export { ReceiptItem } from './ui';
