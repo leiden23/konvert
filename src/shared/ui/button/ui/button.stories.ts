@@ -17,26 +17,19 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        variant: 'primary',
+        appearance: 'primary',
         children: 'кнопка',
     },
 };
 export const Secondary: Story = {
     args: {
-        variant: 'secondary',
+        appearance: 'secondary',
         children: 'кнопка',
     },
 };
 export const Tertiary: Story = {
     args: {
-        variant: 'tertiary',
+        appearance: 'tertiary',
         children: 'кнопка',
-    },
-};
-
-export const Green: Story = {
-    args: {
-        variant: 'testGreen',
-        children: 'кнопка тестовая',
     },
 };

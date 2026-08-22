@@ -24,7 +24,7 @@ export const DashboardPage = () => {
 
                 <ReceiptItem categories={categoriesMock} />
 
-                <Button variant="tertiary">+ добавить строку</Button>
+                <Button appearance="tertiary">+ добавить строку</Button>
                 <Spacer height={16} />
                 <hr className={style.separator} />
                 <Spacer height={10} />
@@ -49,7 +49,7 @@ export const DashboardPage = () => {
                     </Stack>
                 </Stack>
                 <Spacer height={20} />
-                <Button className={style.receipt__button}>сохранить чек</Button>
+                <Button appearance={'primary'} className={style.receipt__button}>сохранить чек</Button>
             </Stack>
         </main>
     );

@@ -5,17 +5,17 @@ import type { FC, HTMLAttributes } from 'react';
 import style from './button.module.scss';
 
 type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
-    variant?: 'primary' | 'secondary' | 'tertiary' | 'testGreen';
+    appearance: 'primary' | 'secondary' | 'tertiary';
     children: React.ReactNode;
 };
 
 export const Button: FC<ButtonProps> = ({
     children,
-    variant = 'primary',
+    appearance = 'primary',
     ...props
 }) => {
     return (
-        <button className={clsx(style.button, style[variant], props.className)}>
+        <button className={clsx(style.button, style[appearance], props.className)}>
             {children}
         </button>
     );
