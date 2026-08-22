@@ -1,23 +1,41 @@
 name: CI
 
 on:
-    push: 
-        branches: [ main ]
-    pull_request: 
-        branches: [ '**' ]
+    push:
+        branches: [main]
+    pull_request:
+        branches: ['**']
 
-jobs: 
-    lint: 
-        runs-on: ubuntu-latest 
-        steps: 
-            - name: Checkout code
+jobs:
+    prettier:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code prettier
               uses: actions/checkout@v4
 
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
-                node-version: '20'
-                cache: 'npm'
+                  node-version: '20'
+                  cache: 'npm'
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Check formatting
+              run: npm run format:check
+
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code eslint
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+                  cache: 'npm'
 
             - name: Install dependencies
               run: npm ci
@@ -34,8 +52,8 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
-                node-version: '20'
-                cache: 'npm'
+                  node-version: '20'
+                  cache: 'npm'
 
             - name: Install dependencies
               run: npm ci

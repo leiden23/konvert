@@ -1,1 +1,1 @@
-export { type Category } from './category'
+export { type Category } from './category';

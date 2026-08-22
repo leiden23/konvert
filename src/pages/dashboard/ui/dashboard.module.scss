@@ -10,15 +10,53 @@
     transform: rotate(-0.8deg);
 
     &::before {
-        content: "";
+        content: '';
         position: absolute;
         inset: 0;
         z-index: 0;
         background-color: #fffdf6;
-        clip-path: polygon(0px 0px, 100% 0px, 100% calc(100% - 9px), 97% 100%, 94% calc(100% - 9px), 91% 100%, 88% calc(100% - 9px), 85% 100%, 82% calc(100% - 9px), 79% 100%, 76% calc(100% - 9px), 73% 100%, 70% calc(100% - 9px), 67% 100%, 64% calc(100% - 9px), 61% 100%, 58% calc(100% - 9px), 55% 100%, 52% calc(100% - 9px), 49% 100%, 46% calc(100% - 9px), 43% 100%, 40% calc(100% - 9px), 37% 100%, 34% calc(100% - 9px), 31% 100%, 28% calc(100% - 9px), 25% 100%, 22% calc(100% - 9px), 19% 100%, 16% calc(100% - 9px), 13% 100%, 10% calc(100% - 9px), 7% 100%, 4% calc(100% - 9px), 1% 100%, 0px calc(100% - 9px));
+        clip-path: polygon(
+            0px 0px,
+            100% 0px,
+            100% calc(100% - 9px),
+            97% 100%,
+            94% calc(100% - 9px),
+            91% 100%,
+            88% calc(100% - 9px),
+            85% 100%,
+            82% calc(100% - 9px),
+            79% 100%,
+            76% calc(100% - 9px),
+            73% 100%,
+            70% calc(100% - 9px),
+            67% 100%,
+            64% calc(100% - 9px),
+            61% 100%,
+            58% calc(100% - 9px),
+            55% 100%,
+            52% calc(100% - 9px),
+            49% 100%,
+            46% calc(100% - 9px),
+            43% 100%,
+            40% calc(100% - 9px),
+            37% 100%,
+            34% calc(100% - 9px),
+            31% 100%,
+            28% calc(100% - 9px),
+            25% 100%,
+            22% calc(100% - 9px),
+            19% 100%,
+            16% calc(100% - 9px),
+            13% 100%,
+            10% calc(100% - 9px),
+            7% 100%,
+            4% calc(100% - 9px),
+            1% 100%,
+            0px calc(100% - 9px)
+        );
     }
 
-    >* {
+    > * {
         position: relative;
         z-index: 1;
     }

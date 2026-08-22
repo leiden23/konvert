@@ -1,10 +1,9 @@
 ---
 name: Epic
 about: Верхоуровневая задача, объединяющая задачи на разработку
-title: "[Epic]"
+title: '[Epic]'
 labels: Epic
 assignees: ''
-
 ---
 
 **Ценность**

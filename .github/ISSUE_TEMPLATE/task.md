@@ -1,10 +1,9 @@
 ---
 name: Task
 about: Задача на разработку
-title: "[Task]"
+title: '[Task]'
 labels: enhancement
 assignees: ''
-
 ---
 
 **Ценность**
