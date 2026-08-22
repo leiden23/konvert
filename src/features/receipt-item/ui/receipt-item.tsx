@@ -15,7 +15,11 @@ export const ReceiptItem: FC<Props> = ({ categories }) => {
         <Stack dir="column" className={style.item}>
             <Stack dir="row" gap={8} className={style.categories}>
                 {categories.map((category) => (
-                    <CategoryButton name={category.name} icon={category.icon} />
+                    <CategoryButton
+                        key={`${category.name}-${category.icon}`}
+                        name={category.name}
+                        icon={category.icon}
+                    />
                 ))}
             </Stack>
             <Spacer height={8} />

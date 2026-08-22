@@ -15,7 +15,9 @@ export const Button: FC<ButtonProps> = ({
     ...props
 }) => {
     return (
-        <button className={clsx(style.button, style[appearance], props.className)}>
+        <button
+            className={clsx(style.button, style[appearance], props.className)}
+        >
             {children}
         </button>
     );

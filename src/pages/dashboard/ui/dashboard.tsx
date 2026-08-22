@@ -49,7 +49,12 @@ export const DashboardPage = () => {
                     </Stack>
                 </Stack>
                 <Spacer height={20} />
-                <Button appearance={'primary'} className={style.receipt__button}>сохранить чек</Button>
+                <Button
+                    appearance={'primary'}
+                    className={style.receipt__button}
+                >
+                    сохранить чек
+                </Button>
             </Stack>
         </main>
     );
