@@ -12,11 +12,13 @@ type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
 export const Button: FC<ButtonProps> = ({
     children,
     appearance = 'primary',
+    className,
     ...props
 }) => {
     return (
         <button
-            className={clsx(style.button, style[appearance], props.className)}
+            {...props}
+            className={clsx(style.button, style[appearance], className)}
         >
             {children}
         </button>

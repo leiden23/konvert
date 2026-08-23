@@ -1,6 +1,8 @@
+import { useState } from 'react';
+
 import style from './dashboard.module.scss';
 
-import { type Category } from '@/entities/receipt';
+import { type Category, type ReceiptItemData } from '@/entities/receipt';
 import { ReceiptItem } from '@/features/receipt-item';
 import { Button } from '@/shared/ui/button';
 import { Spacer } from '@/shared/ui/spacer';
@@ -15,6 +17,54 @@ const categoriesMock: Category[] = [
 ];
 
 export const DashboardPage = () => {
+    const [items, setItems] = useState<ReceiptItemData[]>([
+        {
+            id: crypto.randomUUID(),
+            name: 'Хумус',
+            price: '139',
+        },
+        {
+            id: crypto.randomUUID(),
+            name: 'Болгарский перец',
+            price: '67',
+        },
+        {
+            id: crypto.randomUUID(),
+            name: 'Смузи яблоко-шпинат',
+            price: '289',
+        },
+    ]);
+
+    const handleAddItem = () => {
+        const newItem: ReceiptItemData = {
+            id: crypto.randomUUID(),
+            name: '',
+            price: '',
+        };
+
+        setItems((currentItems) => [...currentItems, newItem]);
+    };
+    const handleDeleteItem = (id: string) => {
+        setItems((currentItem) => {
+            if (currentItem.length <= 1) {
+                return currentItem;
+            }
+            return currentItem.filter((item) => item.id !== id);
+        });
+    };
+
+    const handleChangeItem = (
+        id: string,
+        changes: Partial<ReceiptItemData>,
+    ) => {
+        setItems((currentItems) =>
+            currentItems.map((item) =>
+                item.id === id ? { ...item, ...changes } : item,
+            ),
+        );
+    };
+    const total = items.reduce((sum, item) => sum + Number(item.price || 0), 0);
+
     return (
         <main className={style.page}>
             <Stack dir="column" className={style.receipt}>
@@ -22,9 +72,20 @@ export const DashboardPage = () => {
                 <div className={style.receipt__title}>НОВЫЙ ЧЕК</div>
                 <hr className={style.separator} />
 
-                <ReceiptItem categories={categoriesMock} />
+                {items.map((item) => (
+                    <ReceiptItem
+                        item={item}
+                        key={item.id}
+                        categories={categoriesMock}
+                        showDelete={items.length >= 2}
+                        onDelete={() => handleDeleteItem(item.id)}
+                        onChange={handleChangeItem}
+                    />
+                ))}
 
-                <Button appearance="tertiary">+ добавить строку</Button>
+                <Button appearance="tertiary" onClick={handleAddItem}>
+                    + добавить строку
+                </Button>
                 <Spacer height={16} />
                 <hr className={style.separator} />
                 <Spacer height={10} />
@@ -43,7 +104,7 @@ export const DashboardPage = () => {
                             gap={4}
                             className={style.receipt__result__price}
                         >
-                            <div>{'0'}</div>
+                            <div>{total}</div>
                             <div>₽</div>
                         </Stack>
                     </Stack>
