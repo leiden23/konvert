@@ -12,7 +12,7 @@
 }
 
 .field__name {
-    flex: 1 1 0;
+    flex: 5 1 0;
     min-width: 0;
     border-style: none;
     border-bottom: 2px solid #ddd0b6;
@@ -27,15 +27,16 @@
 }
 
 .field__price {
-    flex: 0 0 20%;
+    flex: 2 1 0;
     min-width: 0;
     border-style: none;
     border-bottom: 2px solid #ddd0b6;
-    padding: 7px 2px;
+    padding: 10px 2px;
     text-align: right;
     outline: none;
     background-color: transparent;
     font-size: 15px;
+
     appearance: textfield;
     -moz-appearance: textfield;
 

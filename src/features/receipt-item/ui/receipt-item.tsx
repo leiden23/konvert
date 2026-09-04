@@ -7,6 +7,7 @@ import {
     type Category,
     type ReceiptItemData,
 } from '@/entities/receipt';
+import { Button } from '@/shared/ui/button';
 import { Spacer } from '@/shared/ui/spacer';
 import { Stack } from '@/shared/ui/stack';
 
@@ -37,28 +38,35 @@ export const ReceiptItem: FC<Props> = ({
                 ))}
             </Stack>
             <Spacer height={8} />
-            <div className={style.receipt__field}>
-                <Stack dir="row" gap={8} className={style.fieldRow}>
-                    <input
-                        className={style.field__name}
-                        placeholder="название товара"
-                        value={item.name}
-                        onChange={(event) =>
-                            onChange(item.id, { name: event.target.value })
-                        }
-                    />
-                    <input
-                        type="number"
-                        className={style.field__price}
-                        placeholder="0"
-                        value={item.price}
-                        onChange={(event) =>
-                            onChange(item.id, { price: event.target.value })
-                        }
-                    />
-                    {showDelete && <button onClick={onDelete}>×</button>}
-                </Stack>
-            </div>
+            <Stack
+                dir="row"
+                alignItems="center"
+                gap={8}
+                className={style.fieldRow}
+            >
+                <input
+                    className={style.field__name}
+                    placeholder="название товара"
+                    value={item.name}
+                    onChange={(event) =>
+                        onChange(item.id, { name: event.target.value })
+                    }
+                />
+                <input
+                    type="number"
+                    className={style.field__price}
+                    placeholder="0"
+                    value={item.price}
+                    onChange={(event) =>
+                        onChange(item.id, { price: event.target.value })
+                    }
+                />
+                {showDelete && (
+                    <Button onClick={onDelete} appearance="round">
+                        ×
+                    </Button>
+                )}
+            </Stack>
         </Stack>
     );
 };

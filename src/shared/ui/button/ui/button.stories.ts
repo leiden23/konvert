@@ -33,3 +33,10 @@ export const Tertiary: Story = {
         children: 'кнопка',
     },
 };
+
+export const Round: Story = {
+    args: {
+        appearance: 'round',
+        children: 'x',
+    },
+};

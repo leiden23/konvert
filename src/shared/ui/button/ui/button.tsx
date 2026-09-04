@@ -5,7 +5,7 @@ import type { FC, HTMLAttributes } from 'react';
 import style from './button.module.scss';
 
 type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
-    appearance: 'primary' | 'secondary' | 'tertiary';
+    appearance: 'primary' | 'secondary' | 'tertiary' | 'round';
     children: React.ReactNode;
 };
 
