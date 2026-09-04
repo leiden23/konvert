@@ -9,11 +9,11 @@ import { Spacer } from '@/shared/ui/spacer';
 import { Stack } from '@/shared/ui/stack';
 
 const categoriesMock: Category[] = [
-    { name: 'Продукты', icon: '🍏' },
-    { name: 'Развлечения', icon: '🎉' },
-    { name: 'Одежда', icon: '🎉' },
-    { name: 'Подписки', icon: '🎉' },
-    { name: 'Декор', icon: '🎉' },
+    { id: '1', name: 'Продукты', icon: '🍏' },
+    { id: '2', name: 'Развлечения', icon: '🎉' },
+    { id: '3', name: 'Одежда', icon: '🎉' },
+    { id: '4', name: 'Подписки', icon: '🎉' },
+    { id: '5', name: 'Декор', icon: '🎉' },
 ];
 
 export const DashboardPage = () => {
@@ -22,16 +22,19 @@ export const DashboardPage = () => {
             id: crypto.randomUUID(),
             name: 'Хумус',
             price: '139',
+            categoryId: '1',
         },
         {
             id: crypto.randomUUID(),
-            name: 'Болгарский перец',
+            name: 'Свитер',
             price: '67',
+            categoryId: '3',
         },
         {
             id: crypto.randomUUID(),
-            name: 'Смузи яблоко-шпинат',
+            name: 'Полусферы деревянные',
             price: '289',
+            categoryId: '5',
         },
     ]);
 
@@ -40,6 +43,7 @@ export const DashboardPage = () => {
             id: crypto.randomUUID(),
             name: '',
             price: '',
+            categoryId: null,
         };
 
         setItems((currentItems) => [...currentItems, newItem]);

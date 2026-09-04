@@ -25,6 +25,14 @@ export const Secondary: Story = {
     args: {
         appearance: 'secondary',
         children: 'кнопка',
+        selected: false,
+    },
+};
+export const SecondarySelected: Story = {
+    args: {
+        appearance: 'secondary',
+        children: 'кнопка',
+        selected: true,
     },
 };
 export const Tertiary: Story = {

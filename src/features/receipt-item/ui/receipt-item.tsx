@@ -31,9 +31,13 @@ export const ReceiptItem: FC<Props> = ({
             <Stack dir="row" gap={8} className={style.categories}>
                 {categories.map((category) => (
                     <CategoryButton
-                        key={`${category.name}-${category.icon}`}
+                        key={category.id}
                         name={category.name}
                         icon={category.icon}
+                        selected={item.categoryId === category.id}
+                        onClick={() =>
+                            onChange(item.id, { categoryId: category.id })
+                        }
                     />
                 ))}
             </Stack>
