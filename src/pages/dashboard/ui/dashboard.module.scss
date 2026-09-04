@@ -7,7 +7,9 @@
     overflow: visible;
     padding: 26px;
     width: 600px;
+
     transform: rotate(-0.8deg);
+    transform-origin: top center;
 
     &::before {
         content: '';
