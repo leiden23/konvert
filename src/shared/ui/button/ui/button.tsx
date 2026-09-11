@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import type React from 'react';
-import type { FC, HTMLAttributes } from 'react';
+import type { ComponentPropsWithoutRef, FC } from 'react';
 
 import style from './button.module.scss';
 
-type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = ComponentPropsWithoutRef<'button'> & {
     appearance: 'primary' | 'secondary' | 'tertiary' | 'round';
     selected?: boolean;
     children: React.ReactNode;

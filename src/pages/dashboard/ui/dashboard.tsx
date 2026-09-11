@@ -2,7 +2,11 @@ import { useState } from 'react';
 
 import style from './dashboard.module.scss';
 
-import { type Category, type ReceiptItemData } from '@/entities/receipt';
+import {
+    type Category,
+    type Receipt,
+    type ReceiptItemData,
+} from '@/entities/receipt';
 import { ReceiptItem } from '@/features/receipt-item';
 import { Button } from '@/shared/ui/button';
 import { Spacer } from '@/shared/ui/spacer';
@@ -37,16 +41,17 @@ export const DashboardPage = () => {
             categoryId: '5',
         },
     ]);
+    const [date, setDate] = useState('');
+
+    const createEmptyItem = (): ReceiptItemData => ({
+        id: crypto.randomUUID(),
+        name: '',
+        price: '',
+        categoryId: null,
+    });
 
     const handleAddItem = () => {
-        const newItem: ReceiptItemData = {
-            id: crypto.randomUUID(),
-            name: '',
-            price: '',
-            categoryId: null,
-        };
-
-        setItems((currentItems) => [...currentItems, newItem]);
+        setItems((currentItems) => [...currentItems, createEmptyItem()]);
     };
     const handleDeleteItem = (id: string) => {
         setItems((currentItem) => {
@@ -67,6 +72,32 @@ export const DashboardPage = () => {
             ),
         );
     };
+
+    const handleSaveReceipt = () => {
+        if (!isReceiptValid) return;
+
+        const newReceipt: Receipt = {
+            id: crypto.randomUUID(),
+            date,
+            items: items.map((item) => ({ ...item })),
+        };
+        // TODO: integrate with backend later
+        // eslint-disable-next-line no-console
+        console.log('Receipt payload:', newReceipt);
+
+        setItems([createEmptyItem()]);
+        setDate('');
+    };
+    const isReceiptValid =
+        date !== '' &&
+        items.every(
+            (item) =>
+                item.name.trim() !== '' &&
+                item.price !== '' &&
+                Number(item.price) > 0 &&
+                item.categoryId !== null,
+        );
+
     const total = items.reduce((sum, item) => sum + Number(item.price || 0), 0);
 
     return (
@@ -99,6 +130,8 @@ export const DashboardPage = () => {
                         <input
                             type="date"
                             className={style.receipt__date_input}
+                            value={date}
+                            onChange={(event) => setDate(event.target.value)}
                         />
                     </div>
                     <Stack dir="column" className={style.receipt__result}>
@@ -117,6 +150,8 @@ export const DashboardPage = () => {
                 <Button
                     appearance={'primary'}
                     className={style.receipt__button}
+                    onClick={handleSaveReceipt}
+                    disabled={!isReceiptValid}
                 >
                     сохранить чек
                 </Button>
