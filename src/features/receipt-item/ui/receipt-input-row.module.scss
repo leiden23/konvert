@@ -1,0 +1,43 @@
+.fieldRow {
+    width: 100%;
+}
+
+.name {
+    flex: 5 1 0;
+    min-width: 0;
+    border-style: none;
+    border-bottom: 2px solid #ddd0b6;
+    padding: 10px 2px;
+    font-size: 15px;
+    outline: none;
+    background-color: transparent;
+
+    &::placeholder {
+        font-size: 18px;
+    }
+}
+
+.price {
+    flex: 2 1 0;
+    min-width: 0;
+    border-style: none;
+    border-bottom: 2px solid #ddd0b6;
+    padding: 10px 2px;
+    text-align: right;
+    outline: none;
+    background-color: transparent;
+    font-size: 15px;
+
+    appearance: textfield;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &::placeholder {
+        font-size: 18px;
+    }
+}
