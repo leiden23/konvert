@@ -20,6 +20,15 @@ const categoriesMock: Category[] = [
     { id: '5', name: 'Декор', icon: '🎉' },
 ];
 
+const getCurrentDate = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+};
+
 export const DashboardPage = () => {
     const [items, setItems] = useState<ReceiptItemData[]>([
         {
@@ -42,14 +51,6 @@ export const DashboardPage = () => {
         },
     ]);
 
-    const getCurrentDate = () => {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, '0');
-        const day = String(now.getDate()).padStart(2, '0');
-
-        return `${year}-${month}-${day}`;
-    };
     const [date, setDate] = useState(getCurrentDate);
 
     const createEmptyItem = (): ReceiptItemData => ({
@@ -95,7 +96,7 @@ export const DashboardPage = () => {
         console.log('Receipt payload:', newReceipt);
 
         setItems([createEmptyItem()]);
-        setDate('');
+        setDate(getCurrentDate());
     };
     const isReceiptValid =
         date !== '' &&
