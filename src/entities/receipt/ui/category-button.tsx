@@ -8,11 +8,23 @@ import { Stack } from '@/shared/ui/stack';
 type Props = {
     name: string;
     icon: string;
+    selected: boolean;
+    onClick: () => void;
 };
 
-export const CategoryButton: FC<Props> = ({ name, icon }) => {
+export const CategoryButton: FC<Props> = ({
+    name,
+    icon,
+    selected,
+    onClick,
+}) => {
     return (
-        <Button appearance="secondary" className={style.category}>
+        <Button
+            onClick={onClick}
+            appearance="secondary"
+            selected={selected}
+            className={style.category}
+        >
             <Stack gap={6}>
                 <div>{icon}</div>
                 <div>{name}</div>

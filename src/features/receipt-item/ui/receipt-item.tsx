@@ -1,41 +1,53 @@
 import type { FC } from 'react';
 
+import { ReceiptInputRow } from './receipt-input-row';
 import style from './receipt-item.module.scss';
 
-import { CategoryButton, type Category } from '@/entities/receipt';
+import {
+    CategoryButton,
+    type Category,
+    type ReceiptItemData,
+} from '@/entities/receipt';
 import { Spacer } from '@/shared/ui/spacer';
 import { Stack } from '@/shared/ui/stack';
 
 type Props = {
     categories: Category[];
+    showDelete: boolean;
+    item: ReceiptItemData;
+    onDelete: () => void;
+    onChange: (id: string, changes: Partial<ReceiptItemData>) => void;
 };
 
-export const ReceiptItem: FC<Props> = ({ categories }) => {
+export const ReceiptItem: FC<Props> = ({
+    categories,
+    showDelete,
+    item,
+    onDelete,
+    onChange,
+}) => {
     return (
         <Stack dir="column" className={style.item}>
             <Stack dir="row" gap={8} className={style.categories}>
                 {categories.map((category) => (
                     <CategoryButton
-                        key={`${category.name}-${category.icon}`}
+                        key={category.id}
                         name={category.name}
                         icon={category.icon}
+                        selected={item.categoryId === category.id}
+                        onClick={() =>
+                            onChange(item.id, { categoryId: category.id })
+                        }
                     />
                 ))}
             </Stack>
             <Spacer height={8} />
-            <div className={style.receipt__field}>
-                <Stack dir="row" gap={8} className={style.fieldRow}>
-                    <input
-                        className={style.field__name}
-                        placeholder="название товара"
-                    />
-                    <input
-                        type="number"
-                        className={style.field__price}
-                        placeholder="0"
-                    />
-                </Stack>
-            </div>
+            <ReceiptInputRow
+                item={item}
+                showDelete={showDelete}
+                onChange={onChange}
+                onDelete={onDelete}
+            />
         </Stack>
     );
 };
