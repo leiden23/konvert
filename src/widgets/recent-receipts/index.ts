@@ -1,1 +1,0 @@
-export { RecentReceipts } from './ui';

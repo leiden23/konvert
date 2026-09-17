@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 
-import style from './recent-receipts.module.scss';
+import style from './recent-purchases.module.scss';
 
 import { Card } from '@/shared/ui/card';
 import { Stack } from '@/shared/ui/stack';
 
-type RecentReceiptPreview = {
+type RecentPurchasePreview = {
     id: string;
     name: string;
     emoji: string;
@@ -14,7 +14,7 @@ type RecentReceiptPreview = {
     backgroundColor: string;
 };
 
-const receiptsMock: RecentReceiptPreview[] = [
+const purchasesMock: RecentPurchasePreview[] = [
     {
         id: '1',
         name: 'Салатик вегетарианский',
@@ -33,15 +33,15 @@ const receiptsMock: RecentReceiptPreview[] = [
     },
 ];
 
-export const RecentReceipts: FC = () => {
+export const RecentPurchases: FC = () => {
     return (
         <>
             <div className={style.title}>последние покупки</div>
             <div className={style.list}>
                 <Stack dir="row" gap={10}>
-                    {receiptsMock.map((product) => (
+                    {purchasesMock.map((purchase) => (
                         <Card
-                            key={product.id}
+                            key={purchase.id}
                             padding={12}
                             className={style.card}
                         >
@@ -54,24 +54,26 @@ export const RecentReceipts: FC = () => {
                                     className={style.image}
                                     style={{
                                         backgroundColor:
-                                            product.backgroundColor,
+                                            purchase.backgroundColor,
                                     }}
                                 >
                                     <span className={style.emoji}>
-                                        {product.emoji}
+                                        {purchase.emoji}
                                     </span>
                                 </div>
-                                <div className={style.name}>{product.name}</div>
+                                <div className={style.name}>
+                                    {purchase.name}
+                                </div>
                                 <Stack
                                     justifyContent="space-between"
                                     dir="row"
                                     className={style.bottomRow}
                                 >
                                     <span className={style.date}>
-                                        {product.date}
+                                        {purchase.date}
                                     </span>
                                     <span className={style.price}>
-                                        {product.price} ₽
+                                        {purchase.price} ₽
                                     </span>
                                 </Stack>
                             </Stack>
