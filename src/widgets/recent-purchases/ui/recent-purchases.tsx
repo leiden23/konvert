@@ -4,6 +4,7 @@ import style from './recent-purchases.module.scss';
 
 import { Card } from '@/shared/ui/card';
 import { Stack } from '@/shared/ui/stack';
+import { Tape } from '@/shared/ui/tape';
 
 type RecentPurchasePreview = {
     id: string;
@@ -45,6 +46,11 @@ export const RecentPurchases: FC = () => {
                             padding={12}
                             className={style.card}
                         >
+                            <Tape
+                                color="#b4c896"
+                                placement="center"
+                                size="medium"
+                            />
                             <Stack
                                 gap={8}
                                 dir="column"
