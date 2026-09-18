@@ -1,0 +1,1 @@
+export { RecentPurchases } from './ui';
