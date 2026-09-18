@@ -12,7 +12,7 @@
 
 .card {
     flex: 0 0 200px;
-    height: 220px;
+    max-width: 320px;
 }
 
 .columnInCard {
@@ -34,9 +34,10 @@
 .name {
     font-size: 22px;
     font-family: Caveat, cursive;
-    text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .bottomRow {
