@@ -32,7 +32,41 @@ const purchasesMock: RecentPurchasePreview[] = [
         price: 567,
         backgroundColor: 'rgba(201, 111, 74, 0.133)',
     },
+    {
+        id: '1',
+        name: 'Салатик вегетарианский',
+        emoji: '🥗',
+        date: '23 января',
+        price: 234,
+        backgroundColor: 'rgba(201, 111, 74, 0.133)',
+    },
+    {
+        id: '2',
+        name: 'Салатик вегетарианский',
+        emoji: '🥗',
+        date: '24 января',
+        price: 567,
+        backgroundColor: 'rgba(201, 111, 74, 0.133)',
+    },
+    {
+        id: '1',
+        name: 'Салатик вегетарианский',
+        emoji: '🥗',
+        date: '23 января',
+        price: 234,
+        backgroundColor: 'rgba(201, 111, 74, 0.133)',
+    },
+    {
+        id: '2',
+        name: 'Салатик вегетарианский',
+        emoji: '🥗',
+        date: '24 января',
+        price: 567,
+        backgroundColor: 'rgba(201, 111, 74, 0.133)',
+    },
 ];
+
+const colors = ['#c9b48f', '#b4c896', '#c46a8a', '#5f82a6'];
 
 export const RecentPurchases: FC = () => {
     return (
@@ -40,14 +74,14 @@ export const RecentPurchases: FC = () => {
             <div className={style.title}>последние покупки</div>
             <div className={style.list}>
                 <Stack dir="row" gap={28}>
-                    {purchasesMock.map((purchase) => (
+                    {purchasesMock.map((purchase, index) => (
                         <Card
                             key={purchase.id}
                             padding={12}
                             className={style.card}
                         >
                             <Tape
-                                color="#b4c896"
+                                color={colors[index % colors.length]}
                                 placement="center"
                                 size="medium"
                             />
