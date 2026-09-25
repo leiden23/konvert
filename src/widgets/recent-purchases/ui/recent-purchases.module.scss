@@ -13,6 +13,11 @@
 .card {
     flex: 0 0 200px;
     max-width: 320px;
+    transform: rotate(-2deg);
+
+    &:nth-child(even) {
+        transform: rotate(2deg);
+    }
 }
 
 .columnInCard {

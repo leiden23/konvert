@@ -39,7 +39,7 @@ export const RecentPurchases: FC = () => {
         <>
             <div className={style.title}>последние покупки</div>
             <div className={style.list}>
-                <Stack dir="row" gap={10}>
+                <Stack dir="row" gap={28}>
                     {purchasesMock.map((purchase) => (
                         <Card
                             key={purchase.id}
