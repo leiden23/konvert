@@ -4,6 +4,7 @@ type StackProps = {
     dir?: 'row' | 'column';
     gap?: number;
     alignItems?: CSSProperties['alignItems'];
+    justifyContent?: CSSProperties['justifyContent'];
     className?: HTMLAttributes<HTMLDivElement>['className'];
     children?: ReactNode;
     style?: HTMLAttributes<HTMLDivElement>['style'];
@@ -14,6 +15,7 @@ export const Stack: FC<StackProps> = ({
     dir = 'row',
     gap,
     alignItems,
+    justifyContent,
     children,
     style,
 }) => {
@@ -25,6 +27,7 @@ export const Stack: FC<StackProps> = ({
                 flexDirection: dir,
                 gap,
                 alignItems,
+                justifyContent,
                 ...style,
             }}
         >

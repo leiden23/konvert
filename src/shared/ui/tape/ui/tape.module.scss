@@ -1,0 +1,33 @@
+.tape {
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 5px;
+    z-index: 3;
+    opacity: 0.5;
+}
+
+.big {
+    top: -14px;
+    width: 130px;
+    height: 30px;
+}
+
+.medium {
+    top: -8px;
+    width: 90px;
+    height: 26px;
+}
+
+.left {
+    left: 30px;
+    transform: rotate(-4deg);
+}
+
+.center {
+    left: 50%;
+    transform: translateX(-50%) rotate(-1.5deg);
+}
+
+.right {
+    right: 30px;
+    transform: rotate(4deg);
+}
