@@ -1,8 +1,10 @@
 import style from './envelopes.module.scss';
 
+import { EnvelopesCreator } from '@/features/envelope-creator';
 import { Spacer } from '@/shared/ui/spacer';
 import { Stack } from '@/shared/ui/stack';
 
+// TODO: integrate with backend later
 const envelopesMock = [
     {
         id: '1',
@@ -116,6 +118,7 @@ export const Envelopes = () => {
                         </div>
                     );
                 })}
+                <EnvelopesCreator />
             </div>
         </>
     );
