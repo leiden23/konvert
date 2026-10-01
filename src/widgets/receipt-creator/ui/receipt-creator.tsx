@@ -7,6 +7,7 @@ import { ReceiptItem } from '@/features/receipt-item';
 import { Button } from '@/shared/ui/button';
 import { Spacer } from '@/shared/ui/spacer';
 import { Stack } from '@/shared/ui/stack';
+import { Tape } from '@/shared/ui/tape';
 
 // TODO: integrate with backend later
 const categoriesMock: Category[] = [
@@ -92,7 +93,7 @@ export const ReceiptCreator = () => {
 
     return (
         <Stack dir="column" className={style.receipt}>
-            <div className={style.receipt__decor}></div>
+            <Tape color="#b4c896" placement="left" />
             <div className={style.receipt__title}>НОВЫЙ ЧЕК</div>
             <hr className={style.separator} />
 
