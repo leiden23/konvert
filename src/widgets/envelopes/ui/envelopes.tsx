@@ -1,5 +1,8 @@
+import { useState } from 'react';
+
 import style from './envelopes.module.scss';
 
+import { CreateNewEnvelope } from '@/features/create-new-envelope';
 import { EnvelopesCreator } from '@/features/envelope-creator';
 import { Spacer } from '@/shared/ui/spacer';
 import { Stack } from '@/shared/ui/stack';
@@ -57,6 +60,8 @@ const envelopesMock = [
 ];
 
 export const Envelopes = () => {
+    const [isCreateOpen, setIsCreateOpen] = useState(false);
+
     return (
         <>
             <div className={style.title}>конверты</div>
@@ -118,7 +123,10 @@ export const Envelopes = () => {
                         </div>
                     );
                 })}
-                <EnvelopesCreator />
+                <EnvelopesCreator onClick={() => setIsCreateOpen(true)} />
+                {isCreateOpen && (
+                    <CreateNewEnvelope onClick={() => setIsCreateOpen(false)} />
+                )}
             </div>
         </>
     );

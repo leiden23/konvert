@@ -1,1 +1,1 @@
-export { EnvelopesCreator } from './envelope-create';
+export { EnvelopesCreator } from './envelope-creator';

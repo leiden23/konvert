@@ -13,6 +13,7 @@ export const DashboardPage = () => {
             <Envelopes />
             <Spacer height={46} />
             <RecentPurchases />
+            <Spacer height={46} />
         </main>
     );
 };
